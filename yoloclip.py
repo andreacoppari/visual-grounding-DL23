@@ -9,10 +9,10 @@ import cv2
 yolo_model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True)
 
 # Images
-img = 'CLIP/CLIP.png'
+img = 'woof_meow.jpg'
 
 # Query
-q = "A pink diagram"
+q = "A photo of a cat"
 
 # Inference
 results = yolo_model(img)
