@@ -4,8 +4,8 @@ import torch.nn as nn
 
 
 class TransformerEncoderLayer(nn.Module):
-    def _init_(self, dim_emb, nhead: int = 2, dim_feedforward: int = 10, dropout: float =0.1, activation = nn.GELU):
-        super(TransformerEncoderLayer, self)._init_()
+    def __init__(self, dim_emb, nhead: int = 2, dim_feedforward: int = 10, dropout: float =0.1, activation = nn.GELU):
+        super(TransformerEncoderLayer, self).__init__()
         
         self.attn = nn.MultiheadAttention(dim_emb, nhead, dropout=dropout)
         
@@ -43,8 +43,8 @@ class TransformerEncoderLayer(nn.Module):
 
 
 class MLP(nn.Module):
-    def _init_(self, dim_emb, dim_feedforward = 10, dropout=0.1, activation = nn.GELU):
-        super(MLP, self)._init_()
+    def __init__(self, dim_emb, dim_feedforward = 10, dropout=0.1, activation = nn.GELU):
+        super(MLP, self).__init__()
         
         self.linear1 = nn.Linear(dim_emb, dim_feedforward)
         self.linear2 = nn.Linear(dim_feedforward, dim_emb)
@@ -62,8 +62,8 @@ class MLP(nn.Module):
     
 
 class Net(nn.Module):
-    def _init_(self, dim_emb, dim_box: int = 4, nhead: int = 2, dim_feedforward: int = 10, dropout: float =0.1, activation = nn.GELU):
-        super(Net, self)._init_()
+    def __init__(self, dim_emb, dim_box: int = 4, nhead: int = 2, dim_feedforward: int = 10, dropout: float =0.1, activation = nn.GELU):
+        super(Net, self).__init__()
         
         self.encoder_layer = TransformerEncoderLayer(dim_emb, nhead, dim_feedforward, dropout, activation)
         self.mlp = MLP(dim_emb, dim_feedforward, dropout, activation)
