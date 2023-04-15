@@ -1,5 +1,5 @@
-# visual-grounding-DL23
-Visual Grounding project for the Deep Learning exam. University of Trento, 2023
+# Grounding-GINA-DL23
+Visual Grounding pipeline for the Deep Learning project. University of Trento, 2023
 
 ## Task
 
